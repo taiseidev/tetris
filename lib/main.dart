@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:tetris_game/tetris_game.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:tetris_game/screen/tetris_game.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: TetrisGame(),
     );
   }
