@@ -10,8 +10,9 @@ final checkGameOverProvider = StateProvider<bool>((ref) => false);
 final blockListProvider = StateProvider<List<Widget>>((ref) => []);
 final finishMinoProvider = StateProvider<List<int>>((ref) => []);
 
-final minoProvider =
-    StateNotifierProvider<MinoProvider, List<int>>((ref) => MinoProvider(ref));
+final minoProvider = StateNotifierProvider<MinoProvider, List<int>>(
+  (ref) => MinoProvider(ref),
+);
 
 class MinoProvider extends StateNotifier<List<int>> {
   MinoProvider(this.ref) : super([]) {
@@ -25,7 +26,7 @@ class MinoProvider extends StateNotifier<List<int>> {
     startGame();
     redrawGridList();
     timer = Timer.periodic(
-      const Duration(milliseconds: 100),
+      const Duration(milliseconds: 300),
       (Timer timer) {
         moveMino('bottom');
       },
@@ -140,32 +141,5 @@ class MinoProvider extends StateNotifier<List<int>> {
       }
     }
     return results.contains(true);
-  }
-
-  // カラフルな色を返す
-  Color pickMinoColor() {
-    final randomNum = math.Random().nextInt(7);
-    Color color = Colors.red;
-    switch (randomNum) {
-      case 1:
-        color = Colors.blue;
-        break;
-      case 2:
-        color = Colors.yellow;
-        break;
-      case 3:
-        color = Colors.red;
-        break;
-      case 4:
-        color = Colors.green;
-        break;
-      case 5:
-        color = Colors.purple;
-        break;
-      case 6:
-        color = Colors.cyan;
-        break;
-    }
-    return color;
   }
 }

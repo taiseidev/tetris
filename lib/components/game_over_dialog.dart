@@ -6,8 +6,9 @@ class GameOverDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text("ゲームオーバー"),
-      content: const Text("やる気あんの？"),
+      title: const Center(
+        child: Text("Game Over"),
+      ),
       actions: <Widget>[
         // ボタン領域
         ElevatedButton(

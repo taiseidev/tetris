@@ -31,10 +31,10 @@ class TetrisGame extends HookConsumerWidget {
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
               child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.55,
-                height: MediaQuery.of(context).size.height * 0.7,
+                width: MediaQuery.of(context).size.width * 0.7,
+                height: MediaQuery.of(context).size.height * 0.8,
                 child: Consumer(
                   builder: ((context, ref, child) {
                     final list = ref.watch(blockListProvider);
@@ -53,7 +53,7 @@ class TetrisGame extends HookConsumerWidget {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
                   height: 50,
@@ -64,9 +64,6 @@ class TetrisGame extends HookConsumerWidget {
                     onPressed: () => notifier.moveMino('left'),
                     child: const Icon(Icons.arrow_circle_left_sharp),
                   ),
-                ),
-                const SizedBox(
-                  width: 50,
                 ),
                 SizedBox(
                   height: 50,
