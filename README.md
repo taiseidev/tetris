@@ -2,6 +2,12 @@
 
 Flutter でテトリスのサンプルゲーム作りました。
 
+
+
+https://user-images.githubusercontent.com/91307335/170811672-920d9b96-06f8-4fbe-9bf0-91aa54320f6d.mov
+
+
+
 # 仕様
 
 ・ランダムな 7 種類のミノが生成され、0.3 秒に一回下に移動する。
